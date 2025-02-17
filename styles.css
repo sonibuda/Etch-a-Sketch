@@ -1,0 +1,25 @@
+#mainContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    margin: 20px auto; /*centers container in screen*/
+    
+  
+}
+
+
+
+.allDivs {
+
+    background-color: lightblue;
+   
+    text-align: center;
+    border: 1px solid #ccc;
+    box-sizing: border-box; /*includes border in cals*/
+    width: calc(600px / 16); /*fits # of squares into container to maintain square shape. use variable to replace #16 later*/
+    height: calc(600px / 16);
+    flex: 0 0 auto;
+
+    
+}
