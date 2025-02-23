@@ -8,5 +8,33 @@ for (let i = 0; i < 256; i++) {
     mainContainer.appendChild(div);
 }
 
-//<div onmouseover="this.style.backgroundColor='red'">myDIV.</div>
+
+let boxes = document.getElementsByClassName('allDivs');
+
+//Loop over divs by converting to array.
+Array.from(boxes).forEach(box => {
+    box.addEventListener('mouseover', changeColor);
+});
+
+
+function changeColor(e){
+    function getRandomColor() {
+        const letters = '0123456789ABCDEF';
+        let color = "#";
+        for (let i = 0; i <6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+        }
+        e.target.style.backgroundColor = getRandomColor();
+    }
+
+   
+
+
+
+
+
+
+
 
