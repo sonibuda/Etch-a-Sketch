@@ -1,5 +1,6 @@
 
 
+
 for (let i = 0; i < 256; i++) {
     const div = document.createElement("div");
     //const newContent = document.createTextNode("test");
@@ -7,6 +8,8 @@ for (let i = 0; i < 256; i++) {
     div.classList.add('allDivs');
     mainContainer.appendChild(div);
 }
+
+
 
 
 let boxes = document.getElementsByClassName('allDivs');
@@ -29,7 +32,21 @@ function changeColor(e){
         e.target.style.backgroundColor = getRandomColor();
     }
 
-   
+    const button = document.getElementById('btn');
+    button.addEventListener('click', changeGrid);
+
+    function changeGrid() {
+        let gridSize = prompt('How many boxes would you like in your new grid? Minimum 16, Maximum 100.');
+        alert(gridSize);
+        let numSquares = Number(gridSize);
+
+        if (isNaN(numSquares)) {
+            alert("Enter a numerical value.");
+        }
+        
+    }
+
+ 
 
 
 
