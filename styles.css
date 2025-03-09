@@ -1,25 +1,46 @@
+
+body{
+    background-color: #f4f0f0
+    min-width: 650px;
+}
 #mainContainer {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
     height: 600px;
     margin: 20px auto; /*centers container in screen*/
-    
+    padding: 0px
   
 }
 
+h1, h4, button{
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
 
+h1 {
+    color: gray;
+}
+
+h4 {
+    color: #888585;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px;
+    background-color: #f4f2ee;
+    color: gray;
+    border-color: #c3c0c0;
+}
 
 .allDivs {
-
-    background-color: lightblue;
-   
-    text-align: center;
+    box-sizing: border-box;
     border: 1px solid #ccc;
-    box-sizing: border-box; /*includes border in cals*/
-    width: calc(600px / 16); /*fits # of squares into container to maintain square shape. use variable to replace #16 later*/
-    height: calc(600px / 16);
-    flex: 0 0 auto;
-
     
+   
 }

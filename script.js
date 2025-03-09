@@ -1,16 +1,21 @@
 
 
 
-for (let i = 0; i < 256; i++) {
+const mainContainer = document.getElementById('mainContainer');
+const button = document.getElementById('btn')
+
+function createGrid(size) {
+    mainContainer.innerHTML = "";
+    const totalSquares = size * size;
+    const squareSize = 600/ size;
+    
+    for (let i = 0; i < totalSquares; i++) {
     const div = document.createElement("div");
-    //const newContent = document.createTextNode("test");
-    //div.appendChild(newContent);
     div.classList.add('allDivs');
+    div.style.width = `${squareSize}px`;
+    div.style.height = `${squareSize}px`;
     mainContainer.appendChild(div);
 }
-
-
-
 
 let boxes = document.getElementsByClassName('allDivs');
 
@@ -18,6 +23,7 @@ let boxes = document.getElementsByClassName('allDivs');
 Array.from(boxes).forEach(box => {
     box.addEventListener('mouseover', changeColor);
 });
+}
 
 
 function changeColor(e){
@@ -32,22 +38,26 @@ function changeColor(e){
         e.target.style.backgroundColor = getRandomColor();
     }
 
-    const button = document.getElementById('btn');
-    button.addEventListener('click', changeGrid);
-
     function changeGrid() {
         let gridSize = prompt('How many boxes would you like in your new grid? Minimum 16, Maximum 100.');
-        alert(gridSize);
         let numSquares = Number(gridSize);
 
-        if (isNaN(numSquares)) {
-            alert("Enter a numerical value.");
+        if (isNaN(numSquares) || numSquares < 16 || numSquares > 100) {
+            alert("Enter a numerical value between 16 and 100.");
+            return;
         }
+
+        createGrid(numSquares);
         
     }
 
+    createGrid(16);
+    button.addEventListener('click', changeGrid);
+
  
 
+
+ 
 
 
 
